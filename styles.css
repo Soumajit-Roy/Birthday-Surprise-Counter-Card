@@ -1,0 +1,13 @@
+body {
+    background-color: #4eaebe; /* Change the background color to your desired color */
+    color: #fff;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    font-style: normal;
+}
+
+
+#countdown {
+    font-size:300%;
+    margin-top: 180px;
+}
