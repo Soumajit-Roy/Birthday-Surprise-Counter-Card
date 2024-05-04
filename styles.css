@@ -12,8 +12,8 @@ body {
 }
 
 #redirectBtn {
-    font-family: Arial, sans-serif; /* Change the font family */
-    font-size: 1rem;
+    font-family: "Indie Flower", cursive; /* Change the font family */
+    font-size: 2rem;
     background-color: #4CAF50; /* Green background color */
     color: white;
     padding: 10px 20px;
@@ -24,10 +24,10 @@ body {
 }
 
 #redirectBtn:hover {
-    background-color: #45a049; /* Darker green background color on hover */
+    background-color: #c78926; /* Darker green background color on hover */
 }
 
 #redirectBtn:disabled {
-    background-color: #ccc; /* Grey background color when disabled */
+    background-color: #4b9aa8; /* Grey background color when disabled */
     cursor: not-allowed;
 }

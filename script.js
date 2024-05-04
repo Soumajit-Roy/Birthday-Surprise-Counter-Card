@@ -24,7 +24,7 @@ var x = setInterval(function() {
   // If the countdown is over, display a message
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
+    document.getElementById("countdown").innerHTML = "XYZ";
     document.getElementById("redirectBtn").disabled = false;
   }
 }, 1000);
