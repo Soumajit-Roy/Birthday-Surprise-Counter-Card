@@ -6,8 +6,28 @@ body {
     font-style: normal;
 }
 
-
 #countdown {
     font-size:300%;
     margin-top: 180px;
+}
+
+#redirectBtn {
+    font-family: Arial, sans-serif; /* Change the font family */
+    font-size: 1rem;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#redirectBtn:hover {
+    background-color: #45a049; /* Darker green background color on hover */
+}
+
+#redirectBtn:disabled {
+    background-color: #ccc; /* Grey background color when disabled */
+    cursor: not-allowed;
 }
