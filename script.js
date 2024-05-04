@@ -21,6 +21,19 @@ var x = setInterval(function() {
   document.getElementById("minutes").innerHTML = minutes + " Minutes";
   document.getElementById("seconds").innerHTML = seconds + " Seconds";
   
+  // Change button text during the last 24 hours of the countdown
+  if (distance < 86400000 && distance > 72000000) { // Between 24 and 20 hours 
+    document.getElementById("redirectBtn").innerHTML = "Getting the list of materials";
+  } else if (distance < 72000000 && distance > 57600000) { // Between 20 and 16 hours remaining
+    document.getElementById("redirectBtn").innerHTML = "On my way to the store";
+  } else if (distance < 57600000 && distance > 43200000) { // Between 16 and 12 hours remaining
+    document.getElementById("redirectBtn").innerHTML = "Matching the Goods with the list";
+  } else if (distance < 57600000 && distance > 28800000) { // Between 12 and 8 hours remaining
+    document.getElementById("redirectBtn").innerHTML = "Packing the Goods";
+  } else if (distance < 28800000 && distance > 14400000) { // Between 8 and 4 hours remaining
+    document.getElementById("redirectBtn").innerHTML = "Almost Done";
+  }
+
   // If the countdown is over, display a message
   if (distance < 0) {
     clearInterval(x);
