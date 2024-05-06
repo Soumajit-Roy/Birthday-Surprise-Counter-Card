@@ -41,3 +41,12 @@ var x = setInterval(function() {
     document.getElementById("redirectBtn").disabled = false;
   }
 }, 1000);
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("mousemove", function(e) {
+      var cursorAnimation = document.getElementById("cursorAnimation");
+      cursorAnimation.style.left = (e.pageX - 50) + "px"; // Adjust for circle center
+      cursorAnimation.style.top = (e.pageY - 50) + "px"; // Adjust for circle center
+  });
+});
+
