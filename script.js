@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("May 16, 2024 00:00:00").getTime();
+var countDownDate = new Date("May 7, 2024 17:55:00").getTime();
 
 // Update the countdown every 1 second
 var x = setInterval(function() {
@@ -39,6 +39,8 @@ var x = setInterval(function() {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "XYZ";
     document.getElementById("redirectBtn").disabled = false;
+    // Start falling emojis animation
+    startFallingEmojis();
   }
 }, 1000);
 
@@ -50,6 +52,40 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+//emoji function
+function startFallingEmojis() {
+   var emojisContainer = document.getElementById("emojis");
+   
+   // Create falling emojis
+   for (var i = 0; i < 20; i++) { // Generate 20 emojis
+     // Emoji types
+     var emojis = ["&#127873;", "&#127874;", "&#127880;"]; // Add more emojis here
+ 
+     // Randomly select an emoji type
+     var emojiType = emojis[Math.floor(Math.random() * emojis.length)];
+ 
+     var emoji = document.createElement("div");
+     emoji.innerHTML = emojiType; // Emoji code
+     emoji.classList.add("falling-emoji");
+ 
+     // Randomize starting position
+     var posX = Math.random() * window.innerWidth;
+     var posY = Math.random() * window.innerHeight;
+ 
+     // Randomize initial animation delay
+     var delay = Math.random() * 5 + 1; // Random delay between 1 and 6 seconds
+ 
+     // Apply styles
+     emoji.style.top = posY + "px";
+     emoji.style.left = posX + "px";
+     emoji.style.animationDelay = delay + "s";
+ 
+     emojisContainer.appendChild(emoji);
+   }
+ }
+ 
+
+//Particle effect
 particlesJS("particles-js", {
   "particles": {
      "number": {

@@ -66,3 +66,16 @@ body {
     background-size: cover; background-position: 50% 50%;
     z-index: -1; /* Place particles behind other content */
 }
+
+/* Add styles for falling emojis */
+.falling-emoji {
+    position: absolute;
+    font-size: 24px; /* Emoji size */
+    animation: fall 5s linear infinite; /* Falling animation */
+  }
+  
+  @keyframes fall {
+    to {
+      top: 100vh; /* End position */
+    }
+  }
