@@ -1,5 +1,9 @@
 body {
-    background-color: #4eaebe; /* Change the background color to your desired color */
+    margin: 0;
+    padding: 0;
+    background-image: url('flowers.jpg'); /* Replace 'your-background-image.jpg' with the path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
     color: #fff;
     text-align: center;
     font-family: "Indie Flower", cursive;
@@ -14,7 +18,7 @@ body {
 #redirectBtn {
     font-family: "Indie Flower", cursive; /* Change the font family */
     font-size: 2rem;
-    background-color: #4CAF50; /* Green background color */
+    background-color: #4caf4f35; /* Green background color */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -24,11 +28,11 @@ body {
 }
 
 #redirectBtn:hover {
-    background-color: #c78926; /* Darker green background color on hover */
+    background-color: #c7892649; /* Darker green background color on hover */
 }
 
 #redirectBtn:disabled {
-    background-color: #4b9aa8; /* Grey background color when disabled */
+    background-color: #ffffff37; /* Grey background color when disabled */
     cursor: not-allowed;
 }
 
@@ -77,5 +81,12 @@ body {
   @keyframes fall {
     to {
       top: 100vh; /* End position */
+    }
+  }
+
+  /* Media query for smaller screens */
+@media (max-width: 768px) {
+    body {
+      background-position: top; /* Change background position for smaller screens */
     }
   }
