@@ -23,22 +23,22 @@ var x = setInterval(function() {
   
   // Change button text during the last 24 hours of the countdown
   if (distance < 86400000 && distance > 72000000) { // Between 24 and 20 hours 
-    document.getElementById("redirectBtn").innerHTML = "Getting the list of materials";
+    document.getElementById("openModalBtn").innerHTML = "Getting the list of materials";
   } else if (distance < 72000000 && distance > 57600000) { // Between 20 and 16 hours remaining
-    document.getElementById("redirectBtn").innerHTML = "On my way to the store";
+    document.getElementById("openModalBtn").innerHTML = "On my way to the store";
   } else if (distance < 57600000 && distance > 43200000) { // Between 16 and 12 hours remaining
-    document.getElementById("redirectBtn").innerHTML = "Matching the Goods with the list";
+    document.getElementById("openModalBtn").innerHTML = "Matching the Goods with the list";
   } else if (distance < 57600000 && distance > 28800000) { // Between 12 and 8 hours remaining
-    document.getElementById("redirectBtn").innerHTML = "Packing the Goods";
+    document.getElementById("openModalBtn").innerHTML = "Packing the Goods";
   } else if (distance < 28800000 && distance > 14400000) { // Between 8 and 4 hours remaining
-    document.getElementById("redirectBtn").innerHTML = "Almost Done";
+    document.getElementById("openModalBtn").innerHTML = "Almost Done";
   }
 
   // If the countdown is over, display a message
   if (distance < 0) {
     clearInterval(x);
+    document.getElementById("openModalBtn").disabled = false;
     document.getElementById("countdown").innerHTML = "XYZ";
-    document.getElementById("redirectBtn").disabled = false;
     // Start falling emojis animation
     startFallingEmojis();
   }
@@ -84,6 +84,29 @@ function startFallingEmojis() {
    }
  }
  
+// Get the modal and button elements
+var modal = document.getElementById("imageModal");
+var openModalBtn = document.getElementById("openModalBtn");
+var modalImg = document.getElementById("modalImg");
+
+// When the user clicks the button, open the modal
+openModalBtn.addEventListener("click", function() {
+  modal.style.display = "block";
+});
+
+// When the user clicks on <span> (x), close the modal
+modal.getElementsByClassName("close")[0].addEventListener("click", function() {
+  modal.style.display = "none";
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
+
+
 
 //Particle effect
 particlesJS("particles-js", {

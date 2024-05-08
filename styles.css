@@ -24,7 +24,7 @@ body {
     margin-top: 180px;
 }
 
-#redirectBtn {
+#openModalBtn {
     font-family: "Indie Flower", cursive; /* Change the font family */
     font-size: 2rem;
     background-color: #4caf4f35; /* Green background color */
@@ -36,11 +36,11 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#redirectBtn:hover {
+#openModalBtn:hover {
     background-color: #c7892649; /* Darker green background color on hover */
 }
 
-#redirectBtn:disabled {
+#openModalBtn:disabled {
     background-color: #ffffff37; /* Grey background color when disabled */
     cursor: not-allowed;
 }
@@ -93,3 +93,39 @@ body {
     }
   }
 
+/* Styles for modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 15%;
+    left: 15%;
+    width: 70%; /* Adjust the width of the modal */
+    height: auto;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: auto;
+    max-width: 100%; /* Ensure the image doesn't exceed the modal width */
+  }
+  
+  .modal-content img {
+    display: block;
+    margin: auto;
+    max-width: 100%; /* Make sure the image fits inside the modal */
+    max-height: 100%;
+  }
+  
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
