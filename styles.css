@@ -1,14 +1,23 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('flowers.jpg'); /* Replace 'your-background-image.jpg' with the path to your background image */
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the background image */
     color: #fff;
     text-align: center;
     font-family: "Indie Flower", cursive;
     font-style: normal;
 }
+
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('flowers.jpg');
+    background-size: cover;
+    background-position: center;
+  }
 
 #countdown {
     font-size:300%;
@@ -84,9 +93,3 @@ body {
     }
   }
 
-  /* Media query for smaller screens */
-@media (max-width: 768px) {
-    body {
-      background-position: top; /* Change background position for smaller screens */
-    }
-  }
