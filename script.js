@@ -1,110 +1,105 @@
-// Set the date we're counting down to
-var countDownDate = new Date("May 16, 2024 00:00:00").getTime();
-
-// Update the countdown every 1 second
-var x = setInterval(function() {
-  // Get the current date and time
-  var now = new Date().getTime();
-  
-  // Calculate the distance between now and the countdown date
-  var distance = countDownDate - now;
-  
-  // Calculate days, hours, minutes, and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  // Display the countdown
-  document.getElementById("days").innerHTML = days + " Days";
-  document.getElementById("hours").innerHTML = hours + " Hours";
-  document.getElementById("minutes").innerHTML = minutes + " Minutes";
-  document.getElementById("seconds").innerHTML = seconds + " Seconds";
-  
-  // Change button text during the last 24 hours of the countdown
-  if (distance < 86400000 && distance > 72000000) { // Between 24 and 20 hours 
-    document.getElementById("openModalBtn").innerHTML = "Getting the list of materials";
-  } else if (distance < 72000000 && distance > 57600000) { // Between 20 and 16 hours remaining
-    document.getElementById("openModalBtn").innerHTML = "On my way to the store";
-  } else if (distance < 57600000 && distance > 43200000) { // Between 16 and 12 hours remaining
-    document.getElementById("openModalBtn").innerHTML = "Matching the Goods with the list";
-  } else if (distance < 57600000 && distance > 28800000) { // Between 12 and 8 hours remaining
-    document.getElementById("openModalBtn").innerHTML = "Packing the Goods";
-  } else if (distance < 28800000 && distance > 14400000) { // Between 8 and 4 hours remaining
-    document.getElementById("openModalBtn").innerHTML = "Almost Done";
-  }
-
-  // If the countdown is over, display a message
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("openModalBtn").disabled = false;
-    document.getElementById("countdown").innerHTML = "XYZ";
-    // Start falling emojis animation
-    startFallingEmojis();
-  }
-}, 1000);
-
 document.addEventListener("DOMContentLoaded", function() {
-  document.addEventListener("mousemove", function(e) {
-      var cursorAnimation = document.getElementById("cursorAnimation");
-      cursorAnimation.style.left = (e.pageX - 50) + "px"; // Adjust for circle center
-      cursorAnimation.style.top = (e.pageY - 50) + "px"; // Adjust for circle center
-  });
+   // Get the modal and button elements
+   var modal = document.getElementById("imageModal");
+   var openModalBtn = document.getElementById("openModalBtn");
+
+   // When the user clicks the button, open the modal
+   openModalBtn.addEventListener("click", function() {
+       modal.style.display = "block";
+   });
+
+   // When the user clicks on <span> (x), close the modal
+   modal.getElementsByClassName("close")[0].addEventListener("click", function() {
+       modal.style.display = "none";
+   });
+
+   // When the user clicks anywhere outside of the modal, close it
+   window.addEventListener("click", function(event) {
+       if (event.target == modal) {
+           modal.style.display = "none";
+       }
+   });
+
+   var countDownDate = new Date("May 10, 2024 12:06:00").getTime();
+
+   // Update the countdown every 1 second
+   var x = setInterval(function() {
+       // Get the current date and time
+       var now = new Date().getTime();
+
+       // Calculate the distance between now and the countdown date
+       var distance = countDownDate - now;
+
+       // Calculate days, hours, minutes, and seconds
+       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+       // Display the countdown
+       document.getElementById("days").innerHTML = days + " Days";
+       document.getElementById("hours").innerHTML = hours + " Hours";
+       document.getElementById("minutes").innerHTML = minutes + " Minutes";
+       document.getElementById("seconds").innerHTML = seconds + " Seconds";
+
+       // Change button text during the last 24 hours of the countdown
+       if (distance < 86400000 && distance > 72000000) { // Between 24 and 20 hours 
+           openModalBtn.innerHTML = "Getting the list of materials";
+       } else if (distance < 72000000 && distance > 57600000) { // Between 20 and 16 hours remaining
+           openModalBtn.innerHTML = "On my way to the store";
+       } else if (distance < 57600000 && distance > 43200000) { // Between 16 and 12 hours remaining
+           openModalBtn.innerHTML = "Matching the Goods with the list";
+       } else if (distance < 57600000 && distance > 28800000) { // Between 12 and 8 hours remaining
+           openModalBtn.innerHTML = "Packing the Goods";
+       } else if (distance < 28800000 && distance > 14400000) { // Between 8 and 4 hours remaining
+           openModalBtn.innerHTML = "Almost Done";
+       }
+
+       // If the countdown is over, display a message
+       if (distance < 0) {
+           clearInterval(x);
+           document.getElementById("countdown").innerHTML = "Happy Birthday!";
+
+           // Start falling emojis animation
+           startFallingEmojis();
+
+           openModalBtn.disabled = false;
+       }
+   }, 1000);
 });
 
-//emoji function
+// Emoji function
 function startFallingEmojis() {
    var emojisContainer = document.getElementById("emojis");
-   
+
    // Create falling emojis
    for (var i = 0; i < 20; i++) { // Generate 20 emojis
-     // Emoji types
-     var emojis = ["&#127873;", "&#127874;", "&#127880;"]; // Add more emojis here
- 
-     // Randomly select an emoji type
-     var emojiType = emojis[Math.floor(Math.random() * emojis.length)];
- 
-     var emoji = document.createElement("div");
-     emoji.innerHTML = emojiType; // Emoji code
-     emoji.classList.add("falling-emoji");
- 
-     // Randomize starting position
-     var posX = Math.random() * window.innerWidth;
-     var posY = Math.random() * window.innerHeight;
- 
-     // Randomize initial animation delay
-     var delay = Math.random() * 5 + 1; // Random delay between 1 and 6 seconds
- 
-     // Apply styles
-     emoji.style.top = posY + "px";
-     emoji.style.left = posX + "px";
-     emoji.style.animationDelay = delay + "s";
- 
-     emojisContainer.appendChild(emoji);
+       // Emoji types
+       var emojis = ["&#127873;", "&#127874;", "&#127880;"]; // Add more emojis here
+
+       // Randomly select an emoji type
+       var emojiType = emojis[Math.floor(Math.random() * emojis.length)];
+
+       var emoji = document.createElement("div");
+       emoji.innerHTML = emojiType; // Emoji code
+       emoji.classList.add("falling-emoji");
+
+       // Randomize starting position
+       var posX = Math.random() * window.innerWidth;
+       var posY = Math.random() * window.innerHeight;
+
+       // Randomize initial animation delay
+       var delay = Math.random() * 5 + 1; // Random delay between 1 and 6 seconds
+
+       // Apply styles
+       emoji.style.top = posY + "px";
+       emoji.style.left = posX + "px";
+       emoji.style.animationDelay = delay + "s";
+
+       emojisContainer.appendChild(emoji);
    }
- }
- 
-// Get the modal and button elements
-var modal = document.getElementById("imageModal");
-var openModalBtn = document.getElementById("openModalBtn");
-var modalImg = document.getElementById("modalImg");
+}
 
-// When the user clicks the button, open the modal
-openModalBtn.addEventListener("click", function() {
-  modal.style.display = "block";
-});
-
-// When the user clicks on <span> (x), close the modal
-modal.getElementsByClassName("close")[0].addEventListener("click", function() {
-  modal.style.display = "none";
-});
-
-// When the user clicks anywhere outside of the modal, close it
-window.addEventListener("click", function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
 
 
 

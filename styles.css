@@ -1,131 +1,130 @@
 body {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-    font-family: "Indie Flower", cursive;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-style: normal;
 }
 
 #background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url('flowers.jpg');
-    background-size: cover;
-    background-position: center;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('flowers.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 #countdown {
-    font-size:300%;
-    margin-top: 180px;
+  font-size: 300%;
+  margin-top: 180px;
 }
 
 #openModalBtn {
-    font-family: "Indie Flower", cursive; /* Change the font family */
-    font-size: 2rem;
-    background-color: #4caf4f35; /* Green background color */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem;
+  background-color: #4caf4f35;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #openModalBtn:hover {
-    background-color: #c7892649; /* Darker green background color on hover */
+  background-color: #c7892649;
 }
 
 #openModalBtn:disabled {
-    background-color: #ffffff37; /* Grey background color when disabled */
-    cursor: not-allowed;
+  background-color: #ffffff37;
+  cursor: not-allowed;
 }
 
-/* Add animation for background color change */
 #cursorAnimation {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(149, 229, 30, 0.5); /* Semi-transparent white */
-    pointer-events: none; /* Ensure the animation doesn't interfere with mouse events */
-    z-index: -1; /* Place it behind other elements */
-    animation: pulse 1s infinite ease-out;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(149, 229, 30, 0.5);
+  pointer-events: none;
+  z-index: -1;
+  animation: pulse 1s infinite ease-out;
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(0.1);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
+  0% {
+      transform: scale(0.1);
+      opacity: 0.5;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0;
+  }
 }
 
 #particles-js {
-    position: fixed; /* Make particles container fixed to cover the whole viewport */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url(""); 
-    background-repeat: no-repeat; 
-    background-size: cover; background-position: 50% 50%;
-    z-index: -1; /* Place particles behind other content */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(""); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: 50% 50%;
+  z-index: -1;
 }
 
-/* Add styles for falling emojis */
 .falling-emoji {
-    position: absolute;
-    font-size: 24px; /* Emoji size */
-    animation: fall 5s linear infinite; /* Falling animation */
-  }
-  
-  @keyframes fall {
-    to {
-      top: 100vh; /* End position */
-    }
-  }
+  position: absolute;
+  font-size: 24px;
+  animation: fall 5s linear infinite;
+}
 
-/* Styles for modal */
+@keyframes fall {
+  to {
+      top: 100vh;
+  }
+}
+
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 15%;
-    left: 15%;
-    width: 70%; /* Adjust the width of the modal */
-    height: auto;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  
-  .modal-content {
-    position: relative;
-    margin: auto;
-    max-width: 100%; /* Ensure the image doesn't exceed the modal width */
-  }
-  
-  .modal-content img {
-    display: block;
-    margin: auto;
-    max-width: 100%; /* Make sure the image fits inside the modal */
-    max-height: 100%;
-  }
-  
-  .close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 700px;
+  max-height: 60vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  max-width: 100%;
+}
+
+.modal-content img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
