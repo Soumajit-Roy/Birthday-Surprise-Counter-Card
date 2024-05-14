@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
        // If the countdown is over, display a message
        if (distance < 0) {
            clearInterval(x);
-           document.getElementById("countdown").innerHTML = "Happy Birthday!";
+           document.getElementById("countdown").innerHTML = "Happy Birthday Prapti !!!";
 
            // Start falling emojis animation
            startFallingEmojis();
