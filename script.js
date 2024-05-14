@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
    });
 
    var countDownDate = new Date("May 16, 2024 00:00:00").getTime();
-
+   openModalBtn.disabled = true;
    // Update the countdown every 1 second
    var x = setInterval(function() {
        // Get the current date and time
