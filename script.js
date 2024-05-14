@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
        }
    });
 
-   var countDownDate = new Date("May 10, 2024 00:00:00").getTime();
+   var countDownDate = new Date("May 16, 2024 00:00:00").getTime();
 
    // Update the countdown every 1 second
    var x = setInterval(function() {
