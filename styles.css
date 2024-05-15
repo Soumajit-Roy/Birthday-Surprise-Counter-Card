@@ -128,3 +128,64 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* Style for redirect button */
+
+.paw-button {
+  position: relative;
+  margin: 10px auto;
+  width: 100px;
+  height: 130px;
+  background-color: #FFC0CB;
+  border-radius: 50% 50% 40% 40%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.paw-pad {
+  width: 60px;
+  height: 70px;
+  background-color: #FF69B4;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.toe-bean {
+  width: 30px;
+  height: 40px;
+  background-color: #FF69B4;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.toe-bean1 {
+  top: 10px;
+  left: 20px;
+}
+
+.toe-bean2 {
+  top: 10px;
+  right: 20px;
+}
+
+.toe-bean3 {
+  top: 25px;
+  left: 5px;
+}
+
+.toe-bean4 {
+  top: 25px;
+  right: 5px;
+}
+
+.paw-button:hover {
+  background-color: #FFB6C1;
+}
+
+.paw-button:active {
+  background-color: #ebcf83;
+}

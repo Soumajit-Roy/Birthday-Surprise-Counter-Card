@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
        }
    });
 
+    // Redirect button event listener
+    pawbtn.addEventListener("click", function() {
+      window.location.href = "page2.html"; // Change this URL to the desired destination
+  });
+
    var countDownDate = new Date("May 16, 2024 00:00:00").getTime();
    openModalBtn.disabled = true;
    // Update the countdown every 1 second
