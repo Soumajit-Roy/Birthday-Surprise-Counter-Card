@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var countDownDate = new Date("May 16, 2025 00:00:00").getTime();
+  var countDownDate = new Date("May 16, 2024 00:00:00").getTime();
   buttonneon.style.pointerEvents = "none";
   // Update the countdown every 1 second
   var x = setInterval(function () {
@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (distance < 14400000 && distance > 0) {
       // Between 4 and 0 hours remaining
       buttonneon.lastChild.nodeValue = "Almost there!"
+    }  else if (distance < 0 ) {
+      // After time expires
+      buttonneon.lastChild.nodeValue = "It's here!"
     }
 
     // If the countdown is over, display a message
@@ -41,6 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
       buttonneon.style.pointerEvents = "auto";
     }
   }, 1000);
+});
+
+// JavaScript Functionality for Preloader
+document.addEventListener("DOMContentLoaded", function() {
+   const preloader = document.getElementById("preloader");
+   const buttonneon = document.getElementById("buttonneon");
+
+   buttonneon.addEventListener("click", function() {
+       // Show the preloader
+       preloader.style.display = "flex";
+
+       // Simulate content loading with a timeout (e.g., 3 seconds)
+       setTimeout(function() {
+           // Hide the preloader
+           preloader.style.display = "none";
+           // Redirect to another page
+           window.location.href = "page2.html"; // Replace with your target URL
+       }, 3000);
+   });
 });
 
 //Particle effect

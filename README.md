@@ -16,7 +16,7 @@ Features
 -   **Emoji Falling Animation**: Celebratory emojis fall from the top of the screen once the countdown ends.
 -   **CSS Fireworks**: Interactive fireworks background on the second page.
 -   **3D Birthday Card**: A beautifully crafted 3D birthday card with animations and interactive elements.
--   **Responsive Design**: Fully responsive and works seamlessly on all device sizes. (Except Mobiles)
+-   **Responsive Design**: Fully responsive and works seamlessly on all device sizes.
 
 Demo
 ----
@@ -28,11 +28,11 @@ Screenshots
 
 ### Main Page
 
-
-<a href="https://ibb.co/jkzRNjM"><img src="https://i.ibb.co/jkzRNjM/Screenshot-2024-05-25-214430.png" alt="Screenshot-2024-05-25-214430" border="0"></a> 
+![Main Page](https://i.imgur.com/NG7SZqc.gif)
 
 ### After Countdown
-<a href="https://ibb.co/5KJJ721"><img src="https://i.ibb.co/5KJJ721/Screenshot-2024-05-25-214353.png" alt="Screenshot-2024-05-25-214353" border="0"></a>
+
+![After Countdown Page](https://i.imgur.com/IWOdCg6.gif)
 
 ### 3D Birthday Card
 
